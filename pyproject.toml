@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lossforecast"
+version = "1.1.0"
+description = "Leakage-safe next-quarter net-loss forecast from SEC 10-K/10-Q filings"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["numpy", "pandas", "scikit-learn", "pyarrow"]
+
+[project.optional-dependencies]
+dev = ["pytest", "matplotlib", "seaborn"]
+app = ["streamlit"]
+
+[project.scripts]
+lossforecast = "lossforecast.pipeline:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

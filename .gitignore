@@ -1,0 +1,15 @@
+# data (download from Kaggle, see README)
+data/
+*.parquet
+*.pkl
+# outputs written by the notebook and the smoke test
+tests/_work/
+outputs/
+# python / jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.DS_Store
